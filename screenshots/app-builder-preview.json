@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "PONG.exe — The Retro Duel",
+      "hasCanvas": true,
+      "bodyTextLen": 139,
+      "bodyTextHash": "1a9319e0a71a1de3dc2f88c8c3d9b8e6809a7c4543727ecde3d64e8d151d7b47",
+      "bodyTextPrefix": "PONG.exe THE RETRO DUEL SOUND ON PONG.exe CHALLENGE A FRIEND YOU",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "PONG.exe — The Retro Duel",
+      "hasCanvas": true,
+      "bodyTextLen": 139,
+      "bodyTextHash": "1a9319e0a71a1de3dc2f88c8c3d9b8e6809a7c4543727ecde3d64e8d151d7b47",
+      "bodyTextPrefix": "PONG.exe THE RETRO DUEL SOUND ON PONG.exe CHALLENGE A FRIEND YOU",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

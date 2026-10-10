@@ -1,0 +1,167 @@
+@import "tailwindcss";
+@import "@fontsource/press-start-2p/latin-400.css";
+@import "@fontsource/vt323/latin-400.css";
+
+@theme {
+  --color-bg: #000000;
+  --color-fg: #5dff3a;
+  --color-dim: #1f7a14;
+  --color-glow: #c8ffb0;
+  --font-pixel: "Press Start 2P", ui-monospace, monospace;
+  --font-term: "VT323", ui-monospace, monospace;
+  --shadow-glow: 0 0 28px rgb(93 255 58 / 0.28);
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    min-height: 100%;
+  }
+
+  body {
+    font-family: var(--font-term);
+    overflow-x: hidden;
+    user-select: none;
+  }
+
+  input,
+  textarea {
+    user-select: text;
+  }
+
+  ::selection {
+    background: var(--color-fg);
+    color: var(--color-bg);
+  }
+}
+
+.shell {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  padding-left: max(0.75rem, env(safe-area-inset-left));
+  padding-right: max(0.75rem, env(safe-area-inset-right));
+}
+
+.crt-scan,
+.crt-vignette {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+}
+
+.crt-scan {
+  z-index: 40;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0.18) 0px,
+    rgb(0 0 0 / 0.18) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  animation: phosphor 8s ease-in-out infinite;
+}
+
+.crt-vignette {
+  z-index: 40;
+  background: radial-gradient(ellipse at center, transparent 52%, rgb(0 0 0 / 0.55) 100%);
+}
+
+@keyframes phosphor {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-scan {
+    animation: none;
+    opacity: 0.4;
+  }
+}
+
+.glow {
+  text-shadow: 0 0 10px var(--color-fg);
+}
+
+.court-frame {
+  width: min(100%, calc((100dvh - 16rem) * 16 / 9));
+  margin-inline: auto;
+}
+
+.btn-line,
+.btn-fill,
+.field {
+  width: 100%;
+  border: 2px solid var(--color-fg);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-term);
+  font-size: 1.75rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  min-height: 3rem;
+}
+
+.btn-fill {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+.btn-line:hover:not(:disabled),
+.btn-fill:hover:not(:disabled) {
+  background: var(--color-glow);
+  color: var(--color-bg);
+  border-color: var(--color-glow);
+}
+
+.btn-line:disabled,
+.btn-fill:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-line:focus-visible,
+.btn-fill:focus-visible,
+.field:focus-visible {
+  outline: 2px solid var(--color-fg);
+  outline-offset: 2px;
+}
+
+.btn-compact {
+  width: auto;
+  border: 2px solid var(--color-fg);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-term);
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.8rem;
+  min-height: 2.75rem;
+}
+
+.btn-compact:hover,
+.btn-compact:focus-visible {
+  background: var(--color-fg);
+  color: var(--color-bg);
+  outline: 2px solid var(--color-fg);
+  outline-offset: 2px;
+}
+
+.field::placeholder {
+  color: var(--color-dim);
+}
